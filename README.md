@@ -16,10 +16,10 @@ sequenceDiagram
     STSE -->>- AUTH : Accessory leaf-certificate
     note over AUTH : Verify certificate <br> using public key <br>from CA certificate
     note over AUTH : Generate Challenge <br> (TRNG)
-    AUTH ->>+ STSE : ECDSA_Sign(Challenge)
-    note over STSE : Generate signature <br> using Priv_key <br> (ECDSA sign)
+    AUTH ->>+ STSE : EdDSA_Sign(Challenge)
+    note over STSE : Generate signature <br> using Priv_key <br> (EdDSA sign)
     STSE -->>- AUTH : signature
-    Note over AUTH : Verify signature <br> using public key <br>from CA certificate <br> (ECDSA verify)
+    Note over AUTH : Verify signature <br> using public key <br>from CA certificate <br> (EdDSA verify)
     deactivate AUTH
 ```
 
@@ -163,11 +163,3 @@ As example below.
 <span style="color:green"># ## Device Authenticated (Challenge signature verified successfully)</span>
 </pre>
 
- ## How to adapt the exemple
-
- Each STSE handler contains SE's informations mandatory by the STSELib to manage correctly targeted API and services.
--	device_type : STSAFE-A100/ STSAFE-A110/ STSAFE-A120
--	pPersoInfo  : pointer to a specific device perso configuration
--	pActive_host_session : active host session managed by the open session API set
--	pActive_other_session : other session managed by the open session API set.
--	Io : communication bus description like I2C device address , I2C speed
