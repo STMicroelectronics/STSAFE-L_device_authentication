@@ -1,7 +1,8 @@
 # STSAFE-L010 Accessory authentication
 
-This project illustrates how to use the STSAFE-L010 Secure Element and STMicroelectronics Secure Element Library to perform device/accessory authentication.
-When loaded on the target MCU platform , the project performes an STSAFE-L010 authentication . This authentication scheme is typicaly used in accessories authentication use cases.
+This project illustrates how to use the STSAFE-L010 Secure Element and STMicroelectronics Secure Element Library to perform device/accessory authentication.<br>
+When loaded on the target MCU platform , the project performes an STSAFE-L010 authentication.<br>
+This authentication scheme is typicaly used in accessories authentication use cases.
 
 ```mermaid
 sequenceDiagram

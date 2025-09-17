@@ -230,11 +230,11 @@ int main(void) {
         &signature[signature_size >> 1], (signature_size >> 1));
     if (stse_ret != STSE_OK) {
         printf(PRINT_RED "\n\n\r## stse_certificate_verify_signature ERROR : 0x%04X", stse_ret);
-        while (1)
-            ; // infinite loop
     } else {
         printf(PRINT_GREEN "\n\n\r# ## Device Authenticated (Challenge signature verified successfully)");
     }
+
+    printf(PRINT_RESET "\n\r\n\r*#*# STMICROELECTRONICS #*#*\n\r");
 
     while (1)
         ; // infinite loop
